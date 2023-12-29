@@ -41,4 +41,10 @@ public class CourseController {
         this.courseService.remove(id);
 
     }
+
+    @PutMapping("/addTitleToCourse/{idCourse}/{idTitle}")
+    public Course addTitleToCourse(@PathVariable("idCourse")int idCourse,@PathVariable("idTitle")int idTitle ){
+        return this.courseService.addTitleToCourse(idCourse,idTitle);
+    }
+
 }

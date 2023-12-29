@@ -22,10 +22,14 @@ public class TitleService {
 
     public Title update(int id,Title e) {
         Title title = titleRepository.findById(id).orElse(null);
-        if(title!=null){
+        if(title==null){
+            return null;
+        }else{
             title.setNom(e.getNom());
+            this.titleRepository.save(title);
         }
-        return this.titleRepository.save(e);
+        return title;
+
     }
 
     public Title retrieve(int id) {

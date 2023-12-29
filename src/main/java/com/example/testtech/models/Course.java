@@ -17,7 +17,7 @@ import java.util.List;
 public class Course implements Serializable {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idCourse;
     private String image;
     private int price;
